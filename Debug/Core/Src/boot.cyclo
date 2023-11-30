@@ -1,0 +1,2 @@
+../Core/Src/boot.c:6:6:jump_to_app	1
+../Core/Src/boot.c:22:6:jump_to_boot	1

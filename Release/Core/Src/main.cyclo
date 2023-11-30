@@ -1,0 +1,16 @@
+../Core/Src/main.c:114:10:convert_uint8_to_int	3
+../Core/Src/main.c:130:5:hexCharToInt	4
+../Core/Src/main.c:146:5:hexPairToInt	7
+../Core/Src/main.c:173:6:print_pc	1
+../Core/Src/main.c:177:6:print_pc_version	1
+../Core/Src/main.c:182:5:count_string	2
+../Core/Src/main.c:190:5:count_string2	3
+../Core/Src/main.c:199:5:count_string3	3
+../Core/Src/main.c:208:19:ReadAllLine	13
+../Core/Src/main.c:311:6:CopyandFlash	7
+../Core/Src/main.c:395:6:parse_character_strings	1
+../Core/Src/main.c:411:6:compare_version	5
+../Core/Src/main.c:445:6:ESP_Get_Firmware	8
+../Core/Src/main.c:611:6:SystemClock_Config	3
+../Core/Src/main.c:506:5:main	8
+../Core/Src/main.c:731:6:Error_Handler	1
