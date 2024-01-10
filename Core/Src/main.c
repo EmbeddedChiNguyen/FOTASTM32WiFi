@@ -639,7 +639,9 @@ int main(void) {
 	memset(recv_buf, 0, sizeof(recv_buf));
 	ESP_Get_Firmware((uint8_t*) recv_buf);
 	print_pc("Downloaded firmware file\r\n");
+	if (current_sector == SECTOR_6 || current_sector == SECTOR_5){
 	CopyandFlash(recv_buf, firmware_buf, current_sector);
+	}
 	jump_to_app(current_sector);
 	/* USER CODE END 2 */
 
