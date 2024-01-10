@@ -6,6 +6,5 @@
 void jump_to_app(uint32_t JumpAddress);
 
 // Khai báo hàm jump_to_boot()
-void jump_to_boot(uint32_t BootAddress);
 
 #endif /* BOOT_H */

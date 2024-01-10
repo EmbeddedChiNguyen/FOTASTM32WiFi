@@ -65,43 +65,24 @@ void bufclr(char *buf) {
 
 // Get the latest uploaded FW file name written on "latest_version.txt" file, on the web
 void ESP_Get_Latest_Version(uint8_t *bufToPasteInto) {
-
-	/*QUY TRÌNH
-
-	 1.Client thiết lập kết nối TCP
-
-	 2.Client gửi HTTP Request
-
-	 3.Server gửi HTTP Response
-
-	 4.Đóng kết nối TCP */
-
-	// Some temporary local buffer
 	char local_buf[500] = { 0 };
 	char local_buf2[30] = { 0 };
-
-	// Create TCPIP connection to the web server
 	Uart_flush(wifi_uart);
 	Uart_sendstring(
 			"AT+CIPSTART=\"TCP\",\"nguyenwebstm32.000webhostapp.com\",80\r\n",
 			wifi_uart);
 	while (!(Wait_for("OK\r\n", wifi_uart)))
 		;
-	// Send HTTP GET request to get the content of latest_version.txt
-	// Prepair the HTTP GET request data
-	bufclr(local_buf); // Make sure it cleared
+	bufclr(local_buf);
 	sprintf(local_buf, "GET /uploads/latest_version_test.txt HTTP/1.1\r\n"
 			"Host: nguyenwebstm32.000webhostapp.com\r\n"
 			"Connection: close\r\n\r\n");
 	int len = strlen(local_buf); // Get the data length
-	// Prepair the CIPSEND command
 	bufclr(local_buf2); // Make sure it cleared
 	sprintf(local_buf2, "AT+CIPSEND=%d\r\n", len);
-	// Send CIPSTART
 	Uart_sendstring(local_buf2, wifi_uart);
 	while (!(Wait_for(">", wifi_uart)))
 		;
-	// Send HTTP GET
 	Uart_sendstring(local_buf, wifi_uart);
 	while (!(Wait_for("SEND OK\r\n", wifi_uart)))
 		;
