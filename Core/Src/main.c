@@ -637,9 +637,10 @@ int main(void) {
 
 	HAL_Delay(1000);
 	memset(recv_buf, 0, sizeof(recv_buf));
-	ESP_Get_Firmware((uint8_t*) recv_buf);
-	print_pc("Downloaded firmware file\r\n");
+
 	if (current_sector == SECTOR_6 || current_sector == SECTOR_5){
+		ESP_Get_Firmware((uint8_t*) recv_buf);
+			print_pc("Downloaded firmware file\r\n");
 	CopyandFlash(recv_buf, firmware_buf, current_sector);
 	}
 	jump_to_app(current_sector);
