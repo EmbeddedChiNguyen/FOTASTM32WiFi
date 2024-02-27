@@ -10,4 +10,5 @@
 ## Software requirement:
  - STM32CubeIDE
  - Hercules
+   
 This project is made to learn, for more further supports you can contact: nguyenchinguyen20102003@gmail.com
